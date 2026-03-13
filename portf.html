@@ -1,85 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Portfolio</title>
+    </head>
+    <body>
 
-    <!-- Entete de le page-->
-     <header>
-        <h1>NGOUNDAM V ABDEL FADIL</h1>
-        <p>Etudiant a l'universite de yaounde 1 
-            pationner par le developpement web
-        </p>
-     </header>
+        <!-- Entete de le page-->
+        <header>
+            <h1>NGOUNDAM V ABDEL FADIL</h1>
+            <p>Etudiant a l'universite de yaounde 1 
+                pationner par le developpement web
+            </p>
+         </header>
 
-     <!--Menu de navigation-->
-     <nav>
-        <ul>
-            <li><a href="">Acceuil</a></li>
-            <li><a href="">A Propos</a></li>
-            <li><a href="">Competence</a></li>
-            <li><a href="">Parcour</a></li>
-            <li><a href="">Contact</a></li>
+        <!--Menu de navigation-->
+        <nav>
+            <ul>
+                <li><a href="#acceuil">Acceuil</a></li>
+                <li><a href="#apropos">A Propos</a></li>
+                <li><a href="#competence">Competence</a></li>
+                <li><a href="#parcours">Parcours</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>   
+        
+        </nav>
+
+        <!--Section A Propos-->
+        <section id="A Propos">
+            <h2>A Propos</h2>
+            <p> Je m'appelle NGOUNDAM V ABDEL FADIL, étudiant en développement web. 
+                 Développeur web passionné, je conçois des sites modernes, 
+                élégants et performants. Maîtriser le code c'est avoir le 
+                pouvoir de transformer une simple idée en une réalité visible 
+                par le monde entier. Et crois-moi, ce sentiment est 
+                incomparable ! 💻  
+                Je suis passionné par la création de sites web et j'apprends chaque jour 
+                de nouvelles technologies. Mon objectif est de devenir un développeur 
+                web fullstack compétent et créatif.
+            </p>
+            <img src="Abdel.img.png" alt="">
+        </section>
+
+        <!--Section Competence-->
+
+        <section id="competence">
+            <h2>Competence</h2>
+            <ol>
+                <li>La Competence en access</li>
+                <li>La Competence en base en Adobe photoshop</li>
+                <li>La Competence decoration</li>
+                <li>Competence de Word</li>
+                <li>HTML - Création de pages web</li>
+                <li>Git - Gestion de versions</li>
+                <li>GitHub - Hébergement de projets</li>
+                <li>Travail en équipe</li>
+                <li>Résolution de problèmes</li>
+                <li>Organisation et rigueur</li>
+            </ol>
+        </section>
+
+        <!--Section Parcours-->
+
+        <section id="parcours">
+            <h2>Parcours</h2>
+            <table border="5">
+                <thead>
+                    <th>Annee</th>
+                    <th>Formation</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>2022-2023</th>
+                        <td>Probatoire serie D</td>
+                    </tr>
+                    <tr>
+                        <th>2023-2024</th>
+                        <td>Baccalaureat serie D</td>
+                    </tr>
+                    <tr>
+                        <th>2024-2025</th>
+                        <td>Licence1-informatique et developpement Web</td>
             
-        </ul>
-     </nav>
+                    </tr>
+                    <tr>
+                        <th>2025-2026</th>
+                        <td>Licence2-informatique et specialisation en developpement Web</td>
+                    </tr>
 
-     <!--Section A Propos-->
-     <section>
-        <h2>A Propos</h2>
-        <p> Développeur web passionné, je conçois des sites modernes, 
-            élégants et performants. Maîtriser le code c'est avoir le 
-            pouvoir de transformer une simple idée en une réalité visible 
-            par le monde entier. Et crois-moi, ce sentiment est 
-            incomparable ! 💻  
-        </p>
-        <img src="Abdel.img.png" alt="">
+                </tbody>
+            </table>
+        </section>
 
-       
+        <!--Section Contact-->
 
-     </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <form action="#" method="post">
+                <label for="nom" >Nom :</label>
+                <input type="text" id="nom" name="nom" required><br><br>
+                <label for="prenom">Prenom :</label>
+                <input type="text" id="prenom" name="prenom" required><br><br>
+                <label for="email">email :</label>
+                <input type="email" id="email" name="email" required><br><br>
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" cols="" required></textarea><br><br>
 
-      <!--Section Competence-->
+                <button type="submit">Envoyer</button>
 
-      <section>
-        <h2>Mes Competences</h2>
-        <ul>
-            <li>La Competence en access</li>
-            <li>La Competence en base en Adobe photoshop</li>
-            <li>La Competence decoration</li>
-            <li>Competence de Word</li>
-        </ul>
-      </section>
-
-      <!--Section Parcour-->
-
-      <section>
-        <table border="1">
-            <thead>
-                <th>Annee</th>
-                <th>Formation</th>
-            </thead>
-            <tbody>
-                <tr>
-                    <th>2020-2021</th>
-                    <td>licence</td>
-                </tr>
-                <tr>
-                    <th>2022-2023</th>
-                    <td>master</td>
-                </tr>
-                <tr>
-                    <th>2024-2025</th>
-                    <td>Doctorat</td>
-            
-                </tr>
-
-            </tbody>
-        </table>
-      </section>
+            </form>
+        </section>
     
-</body>
+    </body>
+
+    <!--Pied de la page-->
+
+    <footer>
+        <p>&copy; 2026 - Portfolio ROI-V ABDEL </p>
+        <p>Étudiant en Développement Web - Yaoundé, Cameroun</p>
+    </footer>
 </html>
