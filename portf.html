@@ -1,123 +1,244 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Portfolio</title>
+        <!-- Importation d'une police moderne (ajout) -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/svg+xml" href="logo.svg">
+        
+        <link rel="stylesheet" href="./css/style.css">
     </head>
     <body>
 
-        <!-- Entete de le page-->
-        <header>
-            <h1>NGOUNDAM V ABDEL FADIL</h1>
-            <p>Etudiant a l'universite de yaounde 1 
-                pationner par le developpement web
-            </p>
+        <!-- Entete de la page -->
+        <header id="header-main">
+            <img src="logo.svg" alt="Logo MOUNBEKET NGOUNDAM V ABDEL FADIL" class="main-logo fade-in">
+            <h1>MOUNBEKET NGOUNDAM V ABDEL FADIL</h1>
+            <p>Étudiant à l'université de Yaoundé 1</p>
+            <p class="typewriter"><span id="typed-text"></span><span class="cursor"></span></p>
+            <a href="#contact" class="btn-hero fade-in" style="animation-delay: 0.3s; color: white;">Me contacter</a>
          </header>
 
         <!--Menu de navigation-->
-        <nav>
-            <ul>
-                <li><a href="#acceuil">Acceuil</a></li>
-                <li><a href="#apropos">A Propos</a></li>
-                <li><a href="#competence">Competence</a></li>
-                <li><a href="#parcours">Parcours</a></li>
+        <nav id="navbar">
+            <ul class="navigation">
+                <li><a href="#accueil">Accueil</a></li> 
+                <li><a href="#apropos">À Propos</a></li>
+                <li><a href="#competences">Compétences</a></li>
+                <li><a href="#projets">Projets</a></li>
+                <li><a href="#parcours">Mon parcours</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>   
-        
         </nav>
 
-        <!--Section A Propos-->
-        <section id="A Propos">
-            <h2>A Propos</h2>
-            <p> Je m'appelle NGOUNDAM V ABDEL FADIL, étudiant en développement web. 
-                 Développeur web passionné, je conçois des sites modernes, 
-                élégants et performants. Maîtriser le code c'est avoir le 
-                pouvoir de transformer une simple idée en une réalité visible 
-                par le monde entier. Et crois-moi, ce sentiment est 
-                incomparable ! 💻  
-                Je suis passionné par la création de sites web et j'apprends chaque jour 
-                de nouvelles technologies. Mon objectif est de devenir un développeur 
-                web fullstack compétent et créatif.
-            </p>
-            <img src="Abdel.img.png" alt="">
-        </section>
+        <main>
+            <!--Section À Propos-->
+            <section id="apropos" class="card-section fade-in">
+                <h2 id="apropos-titre">À Propos</h2>
+                <div class="content-wrapper">
+                    <div class="text-content">
+                        <p> Je m'appelle MOUNBEKET NGOUNDAM V ABDEL FADIL, étudiant en développement web. 
+                             Développeur web passionné, je conçois des sites modernes, 
+                            élégants et performants. Maîtriser le code c'est avoir le 
+                            pouvoir de transformer une simple idée en une réalité visible 
+                            par le monde entier. Et crois-moi, ce sentiment est 
+                            incomparable ! 💻  <br><br>
+                            Je suis passionné par la création de sites web et j'apprends chaque jour 
+                            de nouvelles technologies. Mon objectif est de devenir un développeur 
+                            web fullstack compétent et créatif.
+                        </p>
+                        <br>
+                        <a href="CV_NGOUNDAM_V_ABDEL_FADIL.pdf" download class="btn-primary">Télécharger mon CV</a>
+                    </div>
+                    <img src="Screenshot_20260329-002633.png" alt="MOUNBEKET NGOUNDAM V ABDEL FADIL" class="profile-img">
+                </div>
+            </section>
 
-        <!--Section Competence-->
+            <!--Section Compétences-->
+            <section id="competences" class="card-section fade-in">
+                <h2>Mes Compétences</h2>
+                <div class="skills-wrapper">
+                    <!-- Hard Skills -->
+                    <div class="skill-category fade-in">
+                        <h3><span class="emoji">💻</span> Techniques & Outils</h3>
+                        <div class="skills-list">
+                            <span class="skill-chip">HTML5 & CSS3</span>
+                            <span class="skill-chip">JavaScript</span>
+                            <span class="skill-chip">Git & GitHub</span>
+                            <span class="skill-chip">Microsoft Access</span>
+                            <span class="skill-chip">Microsoft Word</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Design & Creation -->
+                    <div class="skill-category fade-in">
+                        <h3><span class="emoji">🎨</span> Design & Graphisme</h3>
+                        <div class="skills-list">
+                            <span class="skill-chip">Adobe Photoshop</span>
+                            <span class="skill-chip">Décoration / Design</span>
+                            <span class="skill-chip">Créativité Web</span>
+                        </div>
+                    </div>
 
-        <section id="competence">
-            <h2>Competence</h2>
-            <ol>
-                <li>La Competence en access</li>
-                <li>La Competence en base en Adobe photoshop</li>
-                <li>La Competence decoration</li>
-                <li>Competence de Word</li>
-                <li>HTML - Création de pages web</li>
-                <li>Git - Gestion de versions</li>
-                <li>GitHub - Hébergement de projets</li>
-                <li>Travail en équipe</li>
-                <li>Résolution de problèmes</li>
-                <li>Organisation et rigueur</li>
-            </ol>
-        </section>
+                    <!-- Soft Skills -->
+                    <div class="skill-category fade-in">
+                        <h3><span class="emoji">🤝</span> Savoir-être (Soft Skills)</h3>
+                        <div class="skills-list">
+                            <span class="skill-chip">Travail en équipe</span>
+                            <span class="skill-chip">Résolution de problèmes</span>
+                            <span class="skill-chip">Organisation</span>
+                            <span class="skill-chip">Rigueur professionnelle</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-        <!--Section Parcours-->
+            <!--Section Projets-->
+            <section id="projets" class="card-section fade-in">
+                <h2>Mes Projets</h2>
+                <div class="projects-grid">
+                    <!-- Projet 1 -->
+                    <div class="project-card fade-in">
+                        <div class="project-content">
+                            <h3>Site Vitrine d'Entreprise</h3>
+                            <p>Conception et réalisation d'un site web moderne et responsive pour une entreprise locale. Animations fluides et formulaires dynamiques.</p>
+                            <div class="project-tags">
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Projet 2 -->
+                    <div class="project-card fade-in">
+                        <div class="project-content">
+                            <h3>Application Web Back-office</h3>
+                            <p>Développement d'un tableau de bord de gestion pour la visualisation et l'analyse de données avec des fonctionnalités interactives.</p>
+                            <div class="project-tags">
+                                <span>React</span>
+                                <span>Node.js</span>
+                                <span>SQL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-        <section id="parcours">
-            <h2>Parcours</h2>
-            <table border="5">
-                <thead>
-                    <th>Annee</th>
-                    <th>Formation</th>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th>2022-2023</th>
-                        <td>Probatoire serie D</td>
-                    </tr>
-                    <tr>
-                        <th>2023-2024</th>
-                        <td>Baccalaureat serie D</td>
-                    </tr>
-                    <tr>
-                        <th>2024-2025</th>
-                        <td>Licence1-informatique et developpement Web</td>
-            
-                    </tr>
-                    <tr>
-                        <th>2025-2026</th>
-                        <td>Licence2-informatique et specialisation en developpement Web</td>
-                    </tr>
+            <!-- Section Statistiques -->
+            <section class="stats-section fade-in">
+                <div class="stat-container">
+                    <div class="stat-box">
+                        <span class="stat-number" data-target="15">0</span><span style="color:#38bdf8; font-size:2.5rem; font-weight:bold;">+</span>
+                        <p>Projets Réalisés</p>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-number" data-target="3">0</span>
+                        <p>Années d'Études</p>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-number" data-target="100">0</span><span style="color:#38bdf8; font-size:2.5rem; font-weight:bold;">%</span>
+                        <p>Passion</p>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-number" data-target="30">0</span><span style="color:#38bdf8; font-size:2.5rem; font-weight:bold;">+</span>
+                        <p>Heures de code / sem</p>
+                    </div>
+                </div>
+            </section>
 
-                </tbody>
-            </table>
-        </section>
+            <!--Section Parcours-->
+            <section id="parcours" class="card-section fade-in">
+                <h2>Mon parcours</h2>
+                <div class="timeline">
+                    <div class="timeline-item fade-in">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2025-2026</div>
+                        <div class="timeline-content">
+                            <h3>Licence 2 - Spécialisation Web</h3>
+                            <p>Informatique et spécialisation en développement Web</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item fade-in">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2024-2025</div>
+                        <div class="timeline-content">
+                            <h3>Licence 1 - Informatique</h3>
+                            <p>Informatique et développement Web</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item fade-in">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2023-2024</div>
+                        <div class="timeline-content">
+                            <h3>Baccalauréat</h3>
+                            <p>Série D</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item fade-in">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2022-2023</div>
+                        <div class="timeline-content">
+                            <h3>Probatoire</h3>
+                            <p>Série D</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-        <!--Section Contact-->
+            <!--Section Contact-->
+            <section id="contact" class="card-section fade-in">
+                <h2>Contact</h2>
+                <form action="#" method="post" id="contact-form" class="styled-form">
+                    <div class="form-group">
+                        <label for="nom">Nom :</label>
+                        <input type="text" id="nom" name="nom" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="prenom">Prenom :</label>
+                        <input type="text" id="prenom" name="prenom" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email :</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Quel service vous intéresse ? :</label>
+                        <select id="service" name="service" required>
+                            <option value="">-- Sélectionnez un service --</option>
+                            <option value="creation_site">Création de site web</option>
+                            <option value="refonte">Refonte de site web</option>
+                            <option value="maintenance">Maintenance et hébergement</option>
+                            <option value="autre">Autre demande</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message :</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
 
-        <section id="contact">
-            <h2>Contact</h2>
-            <form action="#" method="post">
-                <label for="nom" >Nom :</label>
-                <input type="text" id="nom" name="nom" required><br><br>
-                <label for="prenom">Prenom :</label>
-                <input type="text" id="prenom" name="prenom" required><br><br>
-                <label for="email">email :</label>
-                <input type="email" id="email" name="email" required><br><br>
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="5" cols="" required></textarea><br><br>
-
-                <button type="submit">Envoyer</button>
-
-            </form>
-        </section>
+                    <button type="submit" id="submit-btn">Envoyer le message</button>
+                </form>
+            </section>
+        </main>
     
+        <!--Pied de la page ramené dans le body pour corriger le code-->
+        <footer>
+            <div class="social-links" style="margin-bottom: 25px;">
+                <a href="#github" target="_blank" style="color: #cbd5e1; text-decoration: none; margin: 0 15px; font-weight: 600; transition: color 0.3s; display: inline-block;">👨‍💻 Profil GitHub</a>
+                <a href="#linkedin" target="_blank" style="color: #cbd5e1; text-decoration: none; margin: 0 15px; font-weight: 600; transition: color 0.3s; display: inline-block;">💼 Profil LinkedIn</a>
+            </div>
+            <p>&copy; 2026 - MOUNBEKET NGOUNDAM V ABDEL FADIL</p>
+            <p style="margin-top: 10px;">📍 Yaoundé, Cameroun | ✉️ <a href="mailto:ngoundamroivelfadil@gmail.com" style="color: #38bdf8; text-decoration: none;">ngoundamroivelfadil@gmail.com</a></p>
+        </footer>
+
+        <!-- Bouton de retour en haut -->
+        <button id="back-to-top" title="Retour en haut">&#8679;</button>
+
+        <!-- Ajout du script javascript -->
+        <script src="./js/script.js"></script>
     </body>
-
-    <!--Pied de la page-->
-
-    <footer>
-        <p>&copy; 2026 - Portfolio ROI-V ABDEL </p>
-        <p>Étudiant en Développement Web - Yaoundé, Cameroun</p>
-    </footer>
 </html>
