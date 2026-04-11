@@ -13,35 +13,75 @@
         <link rel="stylesheet" href="./css/style.css">
     </head>
     <body>
+        <!-- Préchargeur de site (Preloader) -->
+        <div id="preloader">
+            <div class="loader-content">
+                <span class="bracket">{</span>
+                <span class="loader-text">MOUNBEKET</span>
+                <span class="bracket">}</span>
+            </div>
+            <div class="loader-progress">
+                <div class="loader-bar" id="loader-bar"></div>
+            </div>
+            <div class="loader-count" id="loader-count">0%</div>
+        </div>
+
+        <!-- Effets d'arrière-plan ambiants -->
+        <div class="ambient-circle ambient-circle-1"></div>
+        <div class="ambient-circle ambient-circle-2"></div>
+        <div class="ambient-circle ambient-circle-3"></div>
+
+        <!-- Scroll Progress Bar -->
+        <div id="scroll-progress"></div>
+
+        <!-- Interactive Canvas Background -->
+        <canvas id="particles-canvas"></canvas>
+
+        <!-- Menu latéral fixe (Nouveauté) -->
+        <div class="fixed-socials">
+            <a href="#github" class="social-icon" title="GitHub">👨‍💻</a>
+            <a href="#linkedin" class="social-icon" title="LinkedIn">💼</a>
+            <a href="#contact" class="social-icon" title="Contact">✉️</a>
+        </div>
 
         <!-- Entete de la page -->
         <header id="header-main">
+            <!-- Top Actions (Thème + Langue) -->
+            <div class="top-actions">
+                <button id="theme-toggle" class="theme-btn" title="Activer le mode clair">☀️</button>
+                <div class="lang-switcher">
+                    <button id="lang-fr" class="active">FR</button>
+                    <div class="divider"></div>
+                    <button id="lang-en">EN</button>
+                </div>
+            </div>
+
             <img src="logo.svg" alt="Logo MOUNBEKET NGOUNDAM V ABDEL FADIL" class="main-logo fade-in">
             <h1>MOUNBEKET NGOUNDAM V ABDEL FADIL</h1>
-            <p>Étudiant à l'université de Yaoundé 1</p>
+            <p data-i18n="header-subtitle">Étudiant à l'université de Yaoundé 1</p>
             <p class="typewriter"><span id="typed-text"></span><span class="cursor"></span></p>
-            <a href="#contact" class="btn-hero fade-in" style="animation-delay: 0.3s; color: white;">Me contacter</a>
-         </header>
+            <a href="#contact" class="btn-hero fade-in btn-hero-contact" style="animation-delay: 0.3s;" data-i18n="btn-contact">Me contacter</a>
+        </header>
 
         <!--Menu de navigation-->
         <nav id="navbar">
             <ul class="navigation">
-                <li><a href="#accueil">Accueil</a></li> 
-                <li><a href="#apropos">À Propos</a></li>
-                <li><a href="#competences">Compétences</a></li>
-                <li><a href="#projets">Projets</a></li>
-                <li><a href="#parcours">Mon parcours</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#accueil" data-i18n="nav-home">Accueil</a></li> 
+                <li><a href="#apropos" data-i18n="nav-about">À Propos</a></li>
+                <li><a href="#competences" data-i18n="nav-skills">Compétences</a></li>
+                <li><a href="#projets" data-i18n="nav-projects">Projets</a></li>
+                <li><a href="#parcours" data-i18n="nav-journey">Mon parcours</a></li>
+                <li><a href="#contact" data-i18n="nav-contact">Contact</a></li>
             </ul>   
         </nav>
 
         <main>
             <!--Section À Propos-->
             <section id="apropos" class="card-section fade-in">
-                <h2 id="apropos-titre">À Propos</h2>
+                <h2 id="apropos-titre" data-i18n="about-title">À Propos</h2>
                 <div class="content-wrapper">
                     <div class="text-content">
-                        <p> Je m'appelle MOUNBEKET NGOUNDAM V ABDEL FADIL, étudiant en développement web. 
+                        <p data-i18n="about-text"> Je m'appelle MOUNBEKET NGOUNDAM V ABDEL FADIL, étudiant en développement web. 
                              Développeur web passionné, je conçois des sites modernes, 
                             élégants et performants. Maîtriser le code c'est avoir le 
                             pouvoir de transformer une simple idée en une réalité visible 
@@ -52,7 +92,25 @@
                             web fullstack compétent et créatif.
                         </p>
                         <br>
-                        <a href="CV_NGOUNDAM_V_ABDEL_FADIL.pdf" download class="btn-primary">Télécharger mon CV</a>
+                        <a href="CV_NGOUNDAM_V_ABDEL_FADIL.pdf" download class="btn-primary" data-i18n="btn-cv">Télécharger mon CV</a>
+                        
+                        <!-- NOUVEAU: Terminal Mockup -->
+                        <div class="terminal-mockup fade-in">
+                            <div class="terminal-bar">
+                                <div class="mac-btn close"></div>
+                                <div class="mac-btn minimize"></div>
+                                <div class="mac-btn expand"></div>
+                                <div class="terminal-title">fadil@dev: ~/portfolio</div>
+                            </div>
+                            <div class="terminal-content">
+                                <p class="term-line"><span class="term-prompt">❯</span> <span class="term-cmd">whoami</span></p>
+                                <p class="term-output" data-i18n="term-out-1">Mounbeket Ngoundam V Abdel Fadil</p>
+                                <p class="term-line"><span class="term-prompt">❯</span> <span class="term-cmd">cat skills.json</span></p>
+                                <p class="term-output" data-i18n="term-out-2">{<br>&nbsp;&nbsp;"frontend": ["HTML5", "CSS3", "JavaScript", "React"],<br>&nbsp;&nbsp;"backend": ["Node.js", "SQL"],<br>&nbsp;&nbsp;"status": "Disponible pour de nouveaux défis"<br>}</p>
+                                <p class="term-line"><span class="term-prompt">❯</span> <span class="term-cursor"></span></p>
+                            </div>
+                        </div>
+
                     </div>
                     <img src="Screenshot_20260329-002633.png" alt="MOUNBEKET NGOUNDAM V ABDEL FADIL" class="profile-img">
                 </div>
@@ -60,11 +118,11 @@
 
             <!--Section Compétences-->
             <section id="competences" class="card-section fade-in">
-                <h2>Mes Compétences</h2>
+                <h2 data-i18n="skills-title">Mes Compétences</h2>
                 <div class="skills-wrapper">
                     <!-- Hard Skills -->
                     <div class="skill-category fade-in">
-                        <h3><span class="emoji">💻</span> Techniques & Outils</h3>
+                        <h3 data-i18n="skills-tech"><span class="emoji">💻</span> Techniques & Outils</h3>
                         <div class="skills-list">
                             <span class="skill-chip">HTML5 & CSS3</span>
                             <span class="skill-chip">JavaScript</span>
@@ -76,22 +134,22 @@
                     
                     <!-- Design & Creation -->
                     <div class="skill-category fade-in">
-                        <h3><span class="emoji">🎨</span> Design & Graphisme</h3>
+                        <h3 data-i18n="skills-design"><span class="emoji">🎨</span> Design & Graphisme</h3>
                         <div class="skills-list">
                             <span class="skill-chip">Adobe Photoshop</span>
-                            <span class="skill-chip">Décoration / Design</span>
-                            <span class="skill-chip">Créativité Web</span>
+                            <span class="skill-chip" data-i18n="skill-deco">Décoration / Design</span>
+                            <span class="skill-chip" data-i18n="skill-crea">Créativité Web</span>
                         </div>
                     </div>
 
                     <!-- Soft Skills -->
                     <div class="skill-category fade-in">
-                        <h3><span class="emoji">🤝</span> Savoir-être (Soft Skills)</h3>
+                        <h3 data-i18n="skills-soft"><span class="emoji">🤝</span> Savoir-être (Soft Skills)</h3>
                         <div class="skills-list">
-                            <span class="skill-chip">Travail en équipe</span>
-                            <span class="skill-chip">Résolution de problèmes</span>
-                            <span class="skill-chip">Organisation</span>
-                            <span class="skill-chip">Rigueur professionnelle</span>
+                            <span class="skill-chip" data-i18n="skill-team">Travail en équipe</span>
+                            <span class="skill-chip" data-i18n="skill-problem">Résolution de problèmes</span>
+                            <span class="skill-chip" data-i18n="skill-org">Organisation</span>
+                            <span class="skill-chip" data-i18n="skill-rigor">Rigueur professionnelle</span>
                         </div>
                     </div>
                 </div>
@@ -99,13 +157,13 @@
 
             <!--Section Projets-->
             <section id="projets" class="card-section fade-in">
-                <h2>Mes Projets</h2>
+                <h2 data-i18n="projects-title">Mes Projets</h2>
                 <div class="projects-grid">
                     <!-- Projet 1 -->
                     <div class="project-card fade-in">
                         <div class="project-content">
-                            <h3>Site Vitrine d'Entreprise</h3>
-                            <p>Conception et réalisation d'un site web moderne et responsive pour une entreprise locale. Animations fluides et formulaires dynamiques.</p>
+                            <h3 data-i18n="proj1-title">Site Vitrine d'Entreprise</h3>
+                            <p data-i18n="proj1-desc">Conception et réalisation d'un site web moderne et responsive pour une entreprise locale. Animations fluides et formulaires dynamiques.</p>
                             <div class="project-tags">
                                 <span>HTML5</span>
                                 <span>CSS3</span>
@@ -116,8 +174,8 @@
                     <!-- Projet 2 -->
                     <div class="project-card fade-in">
                         <div class="project-content">
-                            <h3>Application Web Back-office</h3>
-                            <p>Développement d'un tableau de bord de gestion pour la visualisation et l'analyse de données avec des fonctionnalités interactives.</p>
+                            <h3 data-i18n="proj2-title">Application Web Back-office</h3>
+                            <p data-i18n="proj2-desc">Développement d'un tableau de bord de gestion pour la visualisation et l'analyse de données avec des fonctionnalités interactives.</p>
                             <div class="project-tags">
                                 <span>React</span>
                                 <span>Node.js</span>
@@ -128,62 +186,87 @@
                 </div>
             </section>
 
+            <!--Section Avis Clients-->
+            <section id="avis" class="card-section fade-in">
+                <h2 data-i18n="testimonials-title">Ce qu'ils disent de moi</h2>
+                <div class="carousel-container">
+                    <div class="carousel-track">
+                        <div class="testimonial-card">
+                            <span class="quote-icon">❝</span>
+                            <p data-i18n="test-1-text">"Un développeur très talentueux. Notre site a été livré en avance et dépasse nos attentes !"</p>
+                            <h4 data-i18n="test-1-author">- Client Modèle</h4>
+                        </div>
+                        <div class="testimonial-card">
+                            <span class="quote-icon">❝</span>
+                            <p data-i18n="test-2-text">"Je suis convaincu qu'Abdel Fadil deviendra un grand développeur web.
+                       Il apprend très vite et est toujours prêt à relever de nouveaux défis."</p>
+                            <h4 data-i18n="test-2-author">- Encardreur PropentaTech</h4>
+                        </div>
+                        <div class="testimonial-card">
+                            <span class="quote-icon">❝</span>
+                            <p data-i18n="test-3-text">"Excellent sens du design et une maîtrise technique impeccable. Je recommande fortement !"</p>
+                            <h4 data-i18n="test-3-author">- Designer UI/UX</h4>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <!-- Section Statistiques -->
             <section class="stats-section fade-in">
                 <div class="stat-container">
                     <div class="stat-box">
-                        <span class="stat-number" data-target="15">0</span><span style="color:#38bdf8; font-size:2.5rem; font-weight:bold;">+</span>
-                        <p>Projets Réalisés</p>
+                        <span class="stat-number" data-target="15">0</span><span class="stat-plus">+</span>
+                        <p data-i18n="stat-projects">Projets Réalisés</p>
                     </div>
                     <div class="stat-box">
-                        <span class="stat-number" data-target="3">0</span>
-                        <p>Années d'Études</p>
+                        <span class="stat-number" data-target="2">0</span>
+                        <p data-i18n="stat-years">Années d'Études</p>
                     </div>
                     <div class="stat-box">
-                        <span class="stat-number" data-target="100">0</span><span style="color:#38bdf8; font-size:2.5rem; font-weight:bold;">%</span>
-                        <p>Passion</p>
+                        <span class="stat-number" data-target="100">0</span><span class="stat-plus">%</span>
+                        <p data-i18n="stat-passion">Passion</p>
                     </div>
                     <div class="stat-box">
-                        <span class="stat-number" data-target="30">0</span><span style="color:#38bdf8; font-size:2.5rem; font-weight:bold;">+</span>
-                        <p>Heures de code / sem</p>
+                        <span class="stat-number" data-target="30">0</span><span class="stat-plus">+</span>
+                        <p data-i18n="stat-hours">Heures de code / sem</p>
                     </div>
                 </div>
             </section>
 
             <!--Section Parcours-->
             <section id="parcours" class="card-section fade-in">
-                <h2>Mon parcours</h2>
+                <h2 data-i18n="journey-title">Mon parcours</h2>
                 <div class="timeline">
                     <div class="timeline-item fade-in">
                         <div class="timeline-dot"></div>
                         <div class="timeline-date">2025-2026</div>
                         <div class="timeline-content">
-                            <h3>Licence 2 - Spécialisation Web</h3>
-                            <p>Informatique et spécialisation en développement Web</p>
+                            <h3 data-i18n="journey-l2">Licence 2 - Spécialisation Web</h3>
+                            <p data-i18n="journey-l2-desc">Informatique et spécialisation en développement Web</p>
                         </div>
                     </div>
                     <div class="timeline-item fade-in">
                         <div class="timeline-dot"></div>
                         <div class="timeline-date">2024-2025</div>
                         <div class="timeline-content">
-                            <h3>Licence 1 - Informatique</h3>
-                            <p>Informatique et développement Web</p>
+                            <h3 data-i18n="journey-l1">Licence 1 - Informatique</h3>
+                            <p data-i18n="journey-l1-desc">Informatique et développement Web</p>
                         </div>
                     </div>
                     <div class="timeline-item fade-in">
                         <div class="timeline-dot"></div>
                         <div class="timeline-date">2023-2024</div>
                         <div class="timeline-content">
-                            <h3>Baccalauréat</h3>
-                            <p>Série D</p>
+                            <h3 data-i18n="journey-bac">Baccalauréat</h3>
+                            <p data-i18n="journey-bac-desc">Série D</p>
                         </div>
                     </div>
                     <div class="timeline-item fade-in">
                         <div class="timeline-dot"></div>
                         <div class="timeline-date">2022-2023</div>
                         <div class="timeline-content">
-                            <h3>Probatoire</h3>
-                            <p>Série D</p>
+                            <h3 data-i18n="journey-prob">Probatoire</h3>
+                            <p data-i18n="journey-prob-desc">Série D</p>
                         </div>
                     </div>
                 </div>
@@ -191,52 +274,57 @@
 
             <!--Section Contact-->
             <section id="contact" class="card-section fade-in">
-                <h2>Contact</h2>
+                <h2 data-i18n="contact-title">Contact</h2>
                 <form action="#" method="post" id="contact-form" class="styled-form">
                     <div class="form-group">
-                        <label for="nom">Nom :</label>
+                        <label for="nom" data-i18n="lbl-nom">Nom :</label>
                         <input type="text" id="nom" name="nom" required>
                     </div>
                     <div class="form-group">
-                        <label for="prenom">Prenom :</label>
+                        <label for="prenom" data-i18n="lbl-prenom">Prenom :</label>
                         <input type="text" id="prenom" name="prenom" required>
                     </div>
                     <div class="form-group">
-                        <label for="email">Email :</label>
+                        <label for="email" data-i18n="lbl-email">Email :</label>
                         <input type="email" id="email" name="email" required>
                     </div>
                     <div class="form-group">
-                        <label for="service">Quel service vous intéresse ? :</label>
+                        <label for="service" data-i18n="lbl-service">Quel service vous intéresse ? :</label>
                         <select id="service" name="service" required>
-                            <option value="">-- Sélectionnez un service --</option>
-                            <option value="creation_site">Création de site web</option>
-                            <option value="refonte">Refonte de site web</option>
-                            <option value="maintenance">Maintenance et hébergement</option>
-                            <option value="autre">Autre demande</option>
+                            <option value="" data-i18n="opt-default">-- Sélectionnez un service --</option>
+                            <option value="creation_site" data-i18n="opt-1">Création de site web</option>
+                            <option value="refonte" data-i18n="opt-2">Refonte de site web</option>
+                            <option value="maintenance" data-i18n="opt-3">Maintenance et hébergement</option>
+                            <option value="autre" data-i18n="opt-4">Autre demande</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="message">Message :</label>
+                        <label for="message" data-i18n="lbl-msg">Message :</label>
                         <textarea id="message" name="message" rows="5" required></textarea>
                     </div>
 
-                    <button type="submit" id="submit-btn">Envoyer le message</button>
+                    <button type="submit" id="submit-btn" data-i18n="btn-send">Envoyer le message</button>
                 </form>
             </section>
         </main>
     
         <!--Pied de la page ramené dans le body pour corriger le code-->
         <footer>
-            <div class="social-links" style="margin-bottom: 25px;">
-                <a href="#github" target="_blank" style="color: #cbd5e1; text-decoration: none; margin: 0 15px; font-weight: 600; transition: color 0.3s; display: inline-block;">👨‍💻 Profil GitHub</a>
-                <a href="#linkedin" target="_blank" style="color: #cbd5e1; text-decoration: none; margin: 0 15px; font-weight: 600; transition: color 0.3s; display: inline-block;">💼 Profil LinkedIn</a>
+            <div class="social-links">
+                <a href="#github" target="_blank" class="footer-link" data-i18n="ft-github">👨‍💻 Profil GitHub</a>
+                <a href="#linkedin" target="_blank" class="footer-link" data-i18n="ft-linkedin">💼 Profil LinkedIn</a>
             </div>
             <p>&copy; 2026 - MOUNBEKET NGOUNDAM V ABDEL FADIL</p>
-            <p style="margin-top: 10px;">📍 Yaoundé, Cameroun | ✉️ <a href="mailto:ngoundamroivelfadil@gmail.com" style="color: #38bdf8; text-decoration: none;">ngoundamroivelfadil@gmail.com</a></p>
+            <p class="footer-address">📍 Yaoundé, Cameroun | ✉️ <a href="mailto:ngoundamroivelfadil@gmail.com" class="footer-mail">ngoundamroivelfadil@gmail.com</a></p>
         </footer>
 
-        <!-- Bouton de retour en haut -->
-        <button id="back-to-top" title="Retour en haut">&#8679;</button>
+        <!-- Bouton de retour en haut (Circulaire Progressif) -->
+        <div id="back-to-top-container" title="Retour en haut">
+            <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+            </svg>
+            <span class="arrow">&#8679;</span>
+        </div>
 
         <!-- Ajout du script javascript -->
         <script src="./js/script.js"></script>
