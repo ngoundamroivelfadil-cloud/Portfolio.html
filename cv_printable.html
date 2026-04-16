@@ -31,6 +31,7 @@
             line-height: 1.5;
             background: var(--bg);
             -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
         }
 
         .container {
@@ -192,13 +193,53 @@
             margin-bottom: 5px;
         }
 
+        /* Print Button - Hidden on Print */
+        .no-print-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--accent);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            border: none;
+            cursor: pointer;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: transform 0.2s;
+        }
+
+        .no-print-btn:hover {
+            transform: scale(1.05);
+            background: #0284c7;
+        }
+
+        @media print {
+            .no-print-btn {
+                display: none;
+            }
+            body {
+                background: white;
+            }
+            .container {
+                box-shadow: none;
+            }
+        }
+
     </style>
 </head>
 <body>
+    <button class="no-print-btn" onclick="window.print()">
+        <span>🖨️</span> Imprimer / Enregistrer en PDF
+    </button>
     <div class="container">
         <!-- Sidebar -->
         <div class="sidebar">
-            <!-- On peut réutiliser l'image du portfolio si le chemin est accessible, sinon on laisse un placeholder -->
             <img src="Screenshot_20260329-002633.png" alt="Profil" class="profile-img">
             
             <div class="contact-info">
@@ -206,11 +247,12 @@
                 <div class="contact-item"><span>📍</span> Yaoundé, Cameroun</div>
                 <div class="contact-item"><span>✉️</span> ngoundamroivelfadil@gmail.com</div>
                 <div class="contact-item"><span>📞</span> 690714225</div>
-                <div class="contact-item"><span>🌐</span> Portfolio en ligne</div>
+                <div class="contact-item"><span>👨‍💻</span> GitHub Profile</div>
+                <div class="contact-item"><span>💼</span> LinkedIn Profile</div>
             </div>
 
             <div class="skills-section">
-                <h2>Compétences</h2>
+                <h2>Compétences Techniques</h2>
                 <ul class="skill-list">
                     <li class="skill-item">
                         HTML5 & CSS3
@@ -236,6 +278,14 @@
                         Adobe Photoshop
                         <div class="skill-bar"><div class="skill-progress" style="width: 75%;"></div></div>
                     </li>
+                    <li class="skill-item">
+                        Décoration / Design
+                        <div class="skill-bar"><div class="skill-progress" style="width: 80%;"></div></div>
+                    </li>
+                    <li class="skill-item">
+                        Créativité Web
+                        <div class="skill-bar"><div class="skill-progress" style="width: 90%;"></div></div>
+                    </li>
                 </ul>
             </div>
 
@@ -254,11 +304,12 @@
             </div>
             
             <div class="skills-section">
-                <h2>Soft Skills</h2>
+                <h2>Savoir-être (Soft Skills)</h2>
                 <ul class="skill-list" style="font-size: 0.85rem;">
                     <li>✔ Travail en équipe</li>
                     <li>✔ Résolution de problèmes</li>
-                    <li>✔ Rigueur & Organisation</li>
+                    <li>✔ Organisation</li>
+                    <li>✔ Rigueur professionnelle</li>
                 </ul>
             </div>
         </div>
@@ -271,9 +322,10 @@
             </header>
 
             <div class="summary">
-                Développeur web passionné par la conception de sites modernes, élégants et performants. 
-                Expertise croissante en technologies Front-End et en gestion de bases de données. 
-                Rigoureux et créatif, avec une solide capacité d'apprentissage.
+                Développeur web passionné, je conçois des sites modernes, élégants et performants. 
+                Maîtriser le code c'est avoir le pouvoir de transformer une simple idée en une réalité 
+                visible par le monde entier. Et crois-moi, ce sentiment est incomparable ! 💻 
+                Mon objectif est de devenir un développeur web fullstack compétent et créatif.
             </div>
 
             <section>
@@ -281,40 +333,39 @@
                 
                 <div class="experience-item">
                     <div class="item-header">
+                        <span class="item-title">Site Vitrine & Centralisation</span>
+                        <span class="item-date">2026</span>
+                    </div>
+                    <div class="item-subtitle">Développement Web (Portfolio)</div>
+                    <ul class="item-description">
+                        <li>Développement d'un site web structuré avec HTML5 et complètement stylisé via CSS3.</li>
+                        <li>Gestion des versions sécurisée avec Git et hébergement en ligne grâce à GitHub Pages.</li>
+                        <li>Interface responsive haut de gamme avec fonctionnalités JavaScript avancées.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="item-header">
+                        <span class="item-title">Architecture Système et Gestion</span>
+                        <span class="item-date">2025</span>
+                    </div>
+                    <div class="item-subtitle">SGBD Microsoft Access</div>
+                    <ul class="item-description">
+                        <li>Création d'une base de données métier sous Microsoft Access pour administrer efficacement les informations.</li>
+                        <li>Analyse de données et rapports techniques détaillés créés avec Microsoft Word.</li>
+                        <li>Utilisation de requêtes complexes et formulaires personnalisés.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="item-header">
                         <span class="item-title">Stage en Maintenance Informatique</span>
-                        <span class="item-date">2024 (3 mois)</span>
+                        <span class="item-date">2024</span>
                     </div>
                     <div class="item-subtitle">Services IT - Yaoundé</div>
                     <ul class="item-description">
-                        <li>Diagnostic et dépannage matériel (Laptops, Desktops, Imprimantes).</li>
-                        <li>Installation et configuration de systèmes d'exploitation et logiciels.</li>
-                        <li>Gestion et déploiement de réseaux locaux simples (LAN).</li>
-                    </ul>
-                </div>
-
-                <div class="experience-item">
-                    <div class="item-header">
-                        <span class="item-title">Développement Website Portfolio</span>
-                        <span class="item-date">2026</span>
-                    </div>
-                    <div class="item-subtitle">Projet Personnel Académique</div>
-                    <ul class="item-description">
-                        <li>Conception d'une interface responsive haut de gamme.</li>
-                        <li>Implémentation de fonctionnalités avancées avec JavaScript vanilla.</li>
-                        <li>Déploiement et gestion de version via Git et GitHub Pages.</li>
-                    </ul>
-                </div>
-
-                <div class="experience-item">
-                    <div class="item-header">
-                        <span class="item-title">Système de Gestion Base de Données</span>
-                        <span class="item-date">2025</span>
-                    </div>
-                    <div class="item-subtitle">Projet Académique</div>
-                    <ul class="item-description">
-                        <li>Modélisation de bases de données relationnelles métier.</li>
-                        <li>Création de formulaires et requêtes complexes sous MS Access.</li>
-                        <li>Production de documentations techniques détaillées sous MS Word.</li>
+                        <li>Diagnostic et maintenance préventive des équipements informatiques.</li>
+                        <li>Installation et configuration de systèmes d'exploitation et logiciels applicatifs.</li>
                     </ul>
                 </div>
             </section>
@@ -328,7 +379,7 @@
                         <span class="item-date">2025 - 2026</span>
                     </div>
                     <div class="item-subtitle">Université de Yaoundé 1 - Cameroun</div>
-                    <p style="font-size: 0.9rem;">Spécialisation en Développement Web et Génie Logiciel.</p>
+                    <p style="font-size: 0.9rem;">Informatique et spécialisation en développement Web.</p>
                 </div>
 
                 <div class="education-item">
@@ -337,6 +388,7 @@
                         <span class="item-date">2024 - 2025</span>
                     </div>
                     <div class="item-subtitle">Université de Yaoundé 1 - Cameroun</div>
+                    <p style="font-size: 0.9rem;">Informatique et développement Web.</p>
                 </div>
 
                 <div class="education-item">
@@ -344,7 +396,7 @@
                         <span class="item-title">Baccalauréat Scientifique</span>
                         <span class="item-date">2023 - 2024</span>
                     </div>
-                    <div class="item-subtitle">Enseignement Secondaire - Yaoundé</div>
+                    <div class="item-subtitle">Enseignement Secondaire - Ouest</div>
                 </div>
             </section>
         </div>
