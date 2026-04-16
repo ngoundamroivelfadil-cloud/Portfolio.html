@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - MOUNBEKET NGOUNDAM V ABDEL FADIL</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1e293b;
+            --accent: #38bdf8;
+            --text: #334155;
+            --light-text: #64748b;
+            --bg: #ffffff;
+        }
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text);
+            line-height: 1.5;
+            background: var(--bg);
+            -webkit-print-color-adjust: exact;
+        }
+
+        .container {
+            display: flex;
+            min-height: 297mm;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 35%;
+            background: var(--primary);
+            color: white;
+            padding: 40px 30px;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid var(--accent);
+            margin-bottom: 30px;
+            object-fit: cover;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .sidebar h2 {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 5px;
+            display: inline-block;
+        }
+
+        .contact-info {
+            margin-bottom: 40px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .contact-item span {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+
+        .skills-section, .languages-section {
+            margin-bottom: 40px;
+        }
+
+        .skill-list, .lang-list {
+            list-style: none;
+        }
+
+        .skill-item, .lang-item {
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .skill-bar {
+            height: 6px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 3px;
+            margin-top: 5px;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 3px;
+        }
+
+        /* Main Content */
+        .main-content {
+            width: 65%;
+            padding: 50px 40px;
+        }
+
+        header {
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            line-height: 1.1;
+            margin-bottom: 10px;
+        }
+
+        header .title {
+            font-size: 1.3rem;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .summary {
+            margin-bottom: 40px;
+            font-size: 0.95rem;
+            color: var(--light-text);
+            font-style: italic;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        section h2 {
+            font-size: 1.4rem;
+            color: var(--primary);
+            border-left: 5px solid var(--accent);
+            padding-left: 15px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .experience-item, .education-item {
+            margin-bottom: 20px;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+
+        .item-title {
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .item-date {
+            font-size: 0.85rem;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .item-subtitle {
+            font-size: 0.9rem;
+            color: var(--light-text);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .item-description {
+            font-size: 0.9rem;
+            color: var(--text);
+            list-style: disc;
+            margin-left: 20px;
+        }
+
+        .item-description li {
+            margin-bottom: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <!-- On peut réutiliser l'image du portfolio si le chemin est accessible, sinon on laisse un placeholder -->
+            <img src="Screenshot_20260329-002633.png" alt="Profil" class="profile-img">
+            
+            <div class="contact-info">
+                <h2>Contact</h2>
+                <div class="contact-item"><span>📍</span> Yaoundé, Cameroun</div>
+                <div class="contact-item"><span>✉️</span> ngoundamroivelfadil@gmail.com</div>
+                <div class="contact-item"><span>📞</span> 690714225</div>
+                <div class="contact-item"><span>🌐</span> Portfolio en ligne</div>
+            </div>
+
+            <div class="skills-section">
+                <h2>Compétences</h2>
+                <ul class="skill-list">
+                    <li class="skill-item">
+                        HTML5 & CSS3
+                        <div class="skill-bar"><div class="skill-progress" style="width: 95%;"></div></div>
+                    </li>
+                    <li class="skill-item">
+                        JavaScript
+                        <div class="skill-bar"><div class="skill-progress" style="width: 80%;"></div></div>
+                    </li>
+                    <li class="skill-item">
+                        Git & GitHub
+                        <div class="skill-bar"><div class="skill-progress" style="width: 85%;"></div></div>
+                    </li>
+                    <li class="skill-item">
+                        MS Access & Word
+                        <div class="skill-bar"><div class="skill-progress" style="width: 90%;"></div></div>
+                    </li>
+                    <li class="skill-item">
+                        Maintenance Info
+                        <div class="skill-bar"><div class="skill-progress" style="width: 85%;"></div></div>
+                    </li>
+                    <li class="skill-item">
+                        Adobe Photoshop
+                        <div class="skill-bar"><div class="skill-progress" style="width: 75%;"></div></div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="languages-section">
+                <h2>Langues</h2>
+                <ul class="lang-list">
+                    <li class="lang-item">
+                        Français
+                        <div class="skill-bar"><div class="skill-progress" style="width: 100%;"></div></div>
+                    </li>
+                    <li class="lang-item">
+                        Anglais
+                        <div class="skill-bar"><div class="skill-progress" style="width: 65%;"></div></div>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="skills-section">
+                <h2>Soft Skills</h2>
+                <ul class="skill-list" style="font-size: 0.85rem;">
+                    <li>✔ Travail en équipe</li>
+                    <li>✔ Résolution de problèmes</li>
+                    <li>✔ Rigueur & Organisation</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <header>
+                <h1>MOUNBEKET NGOUNDAM <br><span style="color: var(--light-text); font-weight: 300;">V ABDEL FADIL</span></h1>
+                <div class="title">Étudiant en Informatique & Développeur Web</div>
+            </header>
+
+            <div class="summary">
+                Développeur web passionné par la conception de sites modernes, élégants et performants. 
+                Expertise croissante en technologies Front-End et en gestion de bases de données. 
+                Rigoureux et créatif, avec une solide capacité d'apprentissage.
+            </div>
+
+            <section>
+                <h2>Expériences & Projets</h2>
+                
+                <div class="experience-item">
+                    <div class="item-header">
+                        <span class="item-title">Stage en Maintenance Informatique</span>
+                        <span class="item-date">2024 (3 mois)</span>
+                    </div>
+                    <div class="item-subtitle">Services IT - Yaoundé</div>
+                    <ul class="item-description">
+                        <li>Diagnostic et dépannage matériel (Laptops, Desktops, Imprimantes).</li>
+                        <li>Installation et configuration de systèmes d'exploitation et logiciels.</li>
+                        <li>Gestion et déploiement de réseaux locaux simples (LAN).</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="item-header">
+                        <span class="item-title">Développement Website Portfolio</span>
+                        <span class="item-date">2026</span>
+                    </div>
+                    <div class="item-subtitle">Projet Personnel Académique</div>
+                    <ul class="item-description">
+                        <li>Conception d'une interface responsive haut de gamme.</li>
+                        <li>Implémentation de fonctionnalités avancées avec JavaScript vanilla.</li>
+                        <li>Déploiement et gestion de version via Git et GitHub Pages.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="item-header">
+                        <span class="item-title">Système de Gestion Base de Données</span>
+                        <span class="item-date">2025</span>
+                    </div>
+                    <div class="item-subtitle">Projet Académique</div>
+                    <ul class="item-description">
+                        <li>Modélisation de bases de données relationnelles métier.</li>
+                        <li>Création de formulaires et requêtes complexes sous MS Access.</li>
+                        <li>Production de documentations techniques détaillées sous MS Word.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>Formation</h2>
+                
+                <div class="education-item">
+                    <div class="item-header">
+                        <span class="item-title">Licence 2 en Informatique</span>
+                        <span class="item-date">2025 - 2026</span>
+                    </div>
+                    <div class="item-subtitle">Université de Yaoundé 1 - Cameroun</div>
+                    <p style="font-size: 0.9rem;">Spécialisation en Développement Web et Génie Logiciel.</p>
+                </div>
+
+                <div class="education-item">
+                    <div class="item-header">
+                        <span class="item-title">Licence 1 en Informatique</span>
+                        <span class="item-date">2024 - 2025</span>
+                    </div>
+                    <div class="item-subtitle">Université de Yaoundé 1 - Cameroun</div>
+                </div>
+
+                <div class="education-item">
+                    <div class="item-header">
+                        <span class="item-title">Baccalauréat Scientifique</span>
+                        <span class="item-date">2023 - 2024</span>
+                    </div>
+                    <div class="item-subtitle">Enseignement Secondaire - Yaoundé</div>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
