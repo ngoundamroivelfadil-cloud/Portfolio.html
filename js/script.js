@@ -426,8 +426,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const formData = new FormData(contactForm);
             
             try {
-                // Utilisation de Formspree (L'utilisateur devra confirmer son email lors du premier envoi)
-                const response = await fetch("https://formspree.io/f/mwkgndvo", {
+                // Utilisation directe de l'email pour garantir le fonctionnement immédiat
+                const response = await fetch("https://formspree.io/ngoundamroivelfadil@gmail.com", {
                     method: "POST",
                     body: formData,
                     headers: {
