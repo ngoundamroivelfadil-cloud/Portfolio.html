@@ -424,16 +424,20 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.innerHTML = currentLang === 'fr' ? '🚀 Envoi...' : '🚀 Sending...';
 
             const formData = new FormData(contactForm);
+            const data = Object.fromEntries(formData);
             
             try {
-                // Utilisation directe de l'email pour garantir le fonctionnement immédiat
+                // Utilisation du format JSON pour une meilleure compatibilité
                 const response = await fetch("https://formspree.io/ngoundamroivelfadil@gmail.com", {
                     method: "POST",
-                    body: formData,
+                    body: JSON.stringify(data),
                     headers: {
+                        'Content-Type': 'application/json',
                         'Accept': 'application/json'
                     }
                 });
+
+                console.log("Status de la réponse Formspree:", response.status);
 
                 if (response.ok) {
                     const prenom = document.getElementById('prenom').value;
@@ -442,12 +446,16 @@ document.addEventListener('DOMContentLoaded', () => {
                     showToast(currentLang === 'fr' ? msgFr : msgEn);
                     contactForm.reset();
                 } else {
+                    const result = await response.json();
+                    console.error("Détails de l'erreur Formspree:", result);
+                    
                     const errorMsg = currentLang === 'fr' 
                         ? "Désolé, un problème est survenu lors de l'envoi." 
                         : "Sorry, there was a problem sending your message.";
                     showToast(errorMsg);
                 }
             } catch (error) {
+                console.error("Erreur de connexion:", error);
                 const errorMsg = currentLang === 'fr' 
                     ? "Erreur de connexion. Veuillez réessayer." 
                     : "Connection error. Please try again.";
