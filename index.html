@@ -254,9 +254,13 @@
             <!--Section Contact-->
             <section id="contact" class="card-section fade-in">
                 <h2 data-i18n="contact-title">Contact</h2>
-                <form action="https://formspree.io/ngoundamroivelfadil@gmail.com" method="post" id="contact-form" class="styled-form">
-                    <!-- Sujet de l'email pour Formspree -->
+                <form action="https://api.web3forms.com/submit" method="POST" id="contact-form" class="styled-form">
+                    <!-- Clé d'accès Web3Forms -->
+                    <input type="hidden" name="access_key" value="fbe6c4e7-ebdf-49c6-a501-6a2aa13b1e60">
+                    <!-- Sujet de l'email -->
                     <input type="hidden" name="_subject" value="Nouveau message de votre Portfolio">
+                    <!-- Optionnel : Redirection personnalisée en cas de problème (sinon AJAX gère) -->
+                    <input type="hidden" name="from_name" value="Votre Portfolio">
                     <div class="form-group">
                         <label for="nom" data-i18n="lbl-nom">Nom :</label>
                         <input type="text" id="nom" name="nom" required>
@@ -308,6 +312,6 @@
         </div>
 
         <!-- Ajout du script javascript -->
-        <script src="./js/script.js"></script>
+        <script src="js/script.js?v=1.1"></script>
     </body>
 </html>

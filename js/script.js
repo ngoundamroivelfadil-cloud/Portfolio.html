@@ -416,52 +416,42 @@ document.addEventListener('DOMContentLoaded', () => {
         contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             
-            const submitBtn = document.getElementById('submit-btn');
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
             const originalBtnText = submitBtn.innerHTML;
             
-            // État de chargement (Feedback visuel)
+            // État de chargement
             submitBtn.disabled = true;
             submitBtn.innerHTML = currentLang === 'fr' ? '🚀 Envoi...' : '🚀 Sending...';
 
             const formData = new FormData(contactForm);
-            const data = Object.fromEntries(formData);
-            
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+
             try {
-                // Utilisation du format JSON pour une meilleure compatibilité
-                const response = await fetch("https://formspree.io/ngoundamroivelfadil@gmail.com", {
+                const response = await fetch("https://api.web3forms.com/submit", {
                     method: "POST",
-                    body: JSON.stringify(data),
                     headers: {
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json'
-                    }
+                        "Content-Type": "application/json",
+                        Accept: "application/json"
+                    },
+                    body: json
                 });
 
-                console.log("Status de la réponse Formspree:", response.status);
+                const result = await response.json();
 
-                if (response.ok) {
+                if (response.status === 200) {
                     const prenom = document.getElementById('prenom').value;
                     const msgFr = `Merci ${prenom} ! Votre message a bien été envoyé.`;
                     const msgEn = `Thank you ${prenom} ! Your message has been successfully sent.`;
                     showToast(currentLang === 'fr' ? msgFr : msgEn);
                     contactForm.reset();
                 } else {
-                    const result = await response.json();
-                    console.error("Détails de l'erreur Formspree:", result);
-                    
-                    const errorMsg = currentLang === 'fr' 
-                        ? "Désolé, un problème est survenu lors de l'envoi." 
-                        : "Sorry, there was a problem sending your message.";
-                    showToast(errorMsg);
+                    console.log(result);
+                    showToast(currentLang === 'fr' ? "Erreur lors de l'envoi." : "Error sending message.");
                 }
             } catch (error) {
-                console.error("Erreur de connexion:", error);
-                const errorMsg = currentLang === 'fr' 
-                    ? "Erreur de connexion. Veuillez réessayer." 
-                    : "Connection error. Please try again.";
-                showToast(errorMsg);
+                showToast(currentLang === 'fr' ? "Erreur de connexion." : "Connection error.");
             } finally {
-                // Restaurer le bouton
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = originalBtnText;
             }
