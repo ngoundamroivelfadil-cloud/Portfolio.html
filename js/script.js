@@ -24,6 +24,7 @@ const translations = {
         "skill-rigor": "Rigueur professionnelle",
         "skill-deco": "Décoration / Design",
         "skill-crea": "Créativité Web",
+        "skill-maintenance": "Maintenance Informatique",
         "projects-title": "Mes Projets",
         "proj1-title": "Site d'Entreprise & Centralisation",
         "proj1-desc": "Développement d'un site web structuré avec HTML5 et complètement stylisé via CSS3. Le code est sécurisé avec Git et hébergé en ligne grâce à GitHub Pages.",
@@ -88,6 +89,7 @@ const translations = {
         "skill-rigor": "Professional rigor",
         "skill-deco": "Decoration / Design",
         "skill-crea": "Web Creativity",
+        "skill-maintenance": "IT Maintenance",
         "projects-title": "My Projects",
         "proj1-title": "Corporate Website & VCS",
         "proj1-desc": "Development of a structured website using HTML5 and fully styled with CSS3. The codebase is secured using Git and hosted online via GitHub Pages.",
@@ -560,5 +562,8 @@ document.addEventListener('DOMContentLoaded', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
+
+    // Initialisation de la langue par défaut
+    setLanguage('fr');
 
 });
