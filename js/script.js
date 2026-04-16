@@ -413,19 +413,50 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault(); // Empêche le rechargement de la page
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
             
-            // Récupère les valeurs
-            const prenom = document.getElementById('prenom').value;
+            const submitBtn = document.getElementById('submit-btn');
+            const originalBtnText = submitBtn.innerHTML;
             
-            // Affiche un joli message javascript avec notre Toast customisé
-            const msgFr = `Merci ${prenom} ! Votre message a bien été envoyé.`;
-            const msgEn = `Thank you ${prenom} ! Your message has been successfully sent.`;
-            showToast(currentLang === 'fr' ? msgFr : msgEn);
+            // État de chargement (Feedback visuel)
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = currentLang === 'fr' ? '🚀 Envoi...' : '🚀 Sending...';
+
+            const formData = new FormData(contactForm);
             
-            // Réinitialise le formulaire
-            contactForm.reset();
+            try {
+                // Utilisation de Formspree (L'utilisateur devra confirmer son email lors du premier envoi)
+                const response = await fetch("https://formspree.io/f/mwkgndvo", {
+                    method: "POST",
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    const prenom = document.getElementById('prenom').value;
+                    const msgFr = `Merci ${prenom} ! Votre message a bien été envoyé.`;
+                    const msgEn = `Thank you ${prenom} ! Your message has been successfully sent.`;
+                    showToast(currentLang === 'fr' ? msgFr : msgEn);
+                    contactForm.reset();
+                } else {
+                    const errorMsg = currentLang === 'fr' 
+                        ? "Désolé, un problème est survenu lors de l'envoi." 
+                        : "Sorry, there was a problem sending your message.";
+                    showToast(errorMsg);
+                }
+            } catch (error) {
+                const errorMsg = currentLang === 'fr' 
+                    ? "Erreur de connexion. Veuillez réessayer." 
+                    : "Connection error. Please try again.";
+                showToast(errorMsg);
+            } finally {
+                // Restaurer le bouton
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnText;
+            }
         });
     }
 
